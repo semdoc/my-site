@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Work Location</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Find My Work Location</h1>
+    <div id="map"></div>
+
+    <script>
+        function initMap() {
+            // The location of your work
+            var workLocation = {lat: 39.7851978, lng: 30.4925963}; // Example coordinates (Stockholm, Sweden)
+            
+            // The map, centered at workLocation
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: workLocation
+            });
+            
+            // The marker, positioned at workLocation
+            var marker = new google.maps.Marker({
+                position: workLocation,
+                map: map
+            });
+        }
+    </script>
+
+    <script async defer 
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
+</body>
+</html>
+
